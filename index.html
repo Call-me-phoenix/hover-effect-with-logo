@@ -18,7 +18,7 @@
   <body>
     <div class="navigation">
       <ul>
-        <li class="list active">
+        <li class="list">
           <a href="#">
             <span class="icon"><ion-icon name="logo-twitter"></ion-icon></span>
             <span class="text">Twitter</span>
@@ -53,15 +53,15 @@
     </div>
     <script>
       let list = document.querySelectorAll(".list");
-      function setactiveClass() {
-        list.forEach((item) => {
-          item.classList.remove("active");  
-        });
+      function setActiveClass() {
         this.classList.add("active");
       }
-
+      function removeActiveClass() {
+        this.classList.remove("active");
+      }
       list.forEach((item) => {
-        item.addEventListener("mouseover", setactiveClass);
+        item.addEventListener("mouseover", setActiveClass);
+        item.addEventListener("mouseout", removeActiveClass);
       });
     </script>
   </body>
